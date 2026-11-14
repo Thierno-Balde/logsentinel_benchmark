@@ -1,0 +1,7 @@
+2026-11-14T10:00:00Z INFO service started
+2026-11-14T10:00:01Z DEBUG health check complete
+2026-11-14T10:01:00Z ERROR connection reset by peer
+2026-11-14T10:01:01Z ERROR connection reset by peer
+2026-11-14T10:01:02Z CRITICAL connection reset by peer
+2026-11-14T10:01:10Z WARNING retry later
+corrupted line without expected structure
