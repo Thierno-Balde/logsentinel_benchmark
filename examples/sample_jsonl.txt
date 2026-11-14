@@ -1,0 +1,5 @@
+{"timestamp":"2026-11-14T10:02:00Z","level":"INFO","message":"worker ready"}
+{"time":"2026-11-14T10:02:01Z","severity":"WARNING","msg":"queue slow"}
+{"timestamp":"2026-11-14T10:02:02Z","level":"ERROR","message":"queue slow"}
+{"timestamp":"2026-11-14T10:02:03Z","level":"ERROR","message":"queue slow"}
+not valid json

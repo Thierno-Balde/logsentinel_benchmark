@@ -1,0 +1,70 @@
+{
+  "anomalies": {
+    "error_bursts": [
+      {
+        "count": 3,
+        "end": "2026-11-14T10:01:02+00:00",
+        "files": [
+          "examples/sample.log"
+        ],
+        "levels": {
+          "CRITICAL": 1,
+          "ERROR": 2
+        },
+        "start": "2026-11-14T10:01:00+00:00"
+      }
+    ],
+    "repeated_messages": [
+      {
+        "count": 3,
+        "files": [
+          "examples/sample.log"
+        ],
+        "levels": {
+          "CRITICAL": 1,
+          "ERROR": 2
+        },
+        "message": "connection reset by peer"
+      }
+    ]
+  },
+  "configuration": {
+    "burst_threshold": 3,
+    "repetition_threshold": 3,
+    "window_seconds": 60
+  },
+  "file_errors": [],
+  "files": [
+    "examples/sample.log"
+  ],
+  "score": {
+    "components": {
+      "error_bursts": 10.0,
+      "invalid_lines": 2.86,
+      "repeated_messages": 10.0,
+      "severe_levels": 17.14
+    },
+    "method": "0-20 invalid-line ratio + 0-40 ERROR/CRITICAL ratio + 0-20 bursts + 0-20 repeated-message groups, capped at 100.",
+    "value": 40
+  },
+  "statistics": {
+    "files": 1,
+    "formats": {
+      "json_lines": 0,
+      "simple": 7
+    },
+    "invalid_lines": 1,
+    "levels": {
+      "CRITICAL": 1,
+      "DEBUG": 1,
+      "ERROR": 2,
+      "INFO": 1,
+      "UNKNOWN": 1,
+      "WARNING": 1
+    },
+    "parsed_events": 7,
+    "total_lines": 7
+  },
+  "tool": "LogSentinel",
+  "version": "0.1.0"
+}
