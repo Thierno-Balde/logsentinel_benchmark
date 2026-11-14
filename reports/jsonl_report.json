@@ -1,0 +1,57 @@
+{
+  "anomalies": {
+    "error_bursts": [],
+    "repeated_messages": [
+      {
+        "count": 3,
+        "files": [
+          "examples/sample_jsonl.txt"
+        ],
+        "levels": {
+          "ERROR": 2,
+          "WARNING": 1
+        },
+        "message": "queue slow"
+      }
+    ]
+  },
+  "configuration": {
+    "burst_threshold": 3,
+    "repetition_threshold": 3,
+    "window_seconds": 60
+  },
+  "file_errors": [],
+  "files": [
+    "examples/sample_jsonl.txt"
+  ],
+  "score": {
+    "components": {
+      "error_bursts": 0.0,
+      "invalid_lines": 4.0,
+      "repeated_messages": 10.0,
+      "severe_levels": 16.0
+    },
+    "method": "0-20 invalid-line ratio + 0-40 ERROR/CRITICAL ratio + 0-20 bursts + 0-20 repeated-message groups, capped at 100.",
+    "value": 30
+  },
+  "statistics": {
+    "files": 1,
+    "formats": {
+      "json_lines": 4,
+      "simple": 1
+    },
+    "invalid_lines": 1,
+    "levels": {
+      "CRITICAL": 0,
+      "DEBUG": 0,
+      "ERROR": 2,
+      "INFO": 1,
+      "UNKNOWN": 1,
+      "WARNING": 1
+    },
+    "parsed_events": 5,
+    "total_lines": 5
+  },
+  "tool": "LogSentinel",
+  "version": "0.1.0"
+}
