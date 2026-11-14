@@ -13,10 +13,13 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
-    parsed = parse_path(args.path)
-    report = analyze_events(parsed, window_seconds=args.window)
-    json_path, markdown_path = write_reports(report, args.output)
+    parser = build_parser(); args = parser.parse_args(argv)
+    try:
+        parsed = parse_path(args.path)
+        report = analyze_events(parsed, window_seconds=args.window)
+        json_path, markdown_path = write_reports(report, args.output)
+    except (FileNotFoundError, ValueError, OSError) as exc:
+        parser.error(str(exc))
     print(f"JSON report: {json_path}")
     print(f"Markdown report: {markdown_path}")
     print(f"Anomaly score: {report['score']['value']}/100")

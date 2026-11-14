@@ -10,7 +10,7 @@ from typing import Any
 SUPPORTED_SUFFIXES = {".log", ".txt"}
 LEVELS = ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL")
 _SIMPLE = re.compile(
-    r"^\s*(?P<timestamp>\S+)\s+(?:\[(?P<bracket_level>[A-Za-z]+)\]|(?P<level>[A-Za-z]+))\s+(?P<message>.*)$"
+    r"^\s*(?P<timestamp>(?:\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?)?|\S+))\s+(?:\[(?P<bracket_level>[A-Za-z]+)\]|(?P<level>[A-Za-z]+))\s+(?P<message>.*)$"
 )
 
 @dataclass(frozen=True)
